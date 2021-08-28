@@ -37,27 +37,29 @@ public class Appointment {
 	//@OneToMany(cascade= CascadeType.ALL,mappedBy="patient")
 	
 	@ManyToOne
-	@Column(name="patient")
+	@JoinColumn(name="p_Id")
+	//@Column(name="patient")
 	private Patient patient;
-	@OneToMany(cascade= CascadeType.ALL,mappedBy="doctor")
+	
+//	@OneToMany(cascade= CascadeType.ALL,mappedBy="doctor")
 	
 	@ManyToOne
 	@JoinColumn(name="doctorId")
-	@Column(name="doctor")
+	//@Column(name="doctor")
 	private Doctor doctor;
 	
-	@Column(name="applicationDate")
+	//@Column(name="applicationDate")
 	private Date applicationDate;
 	
-	@Column(name="purpose")
+	//@Column(name="purpose")
 	private String purpose;
 	
-	@Column(name="availability")
+	//@Column(name="availability")
 	private String availability;
 	
-	@ManyToMany
-	@Column(name="family")
-	private List<Family> family=new ArrayList<Family>();
+//	@ManyToMany
+//	@Column(name="family")
+//	private List<Family> family=new ArrayList<Family>();
 	
 	@ManyToOne
 	@JoinColumn(name = "rId")

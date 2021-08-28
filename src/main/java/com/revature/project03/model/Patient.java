@@ -1,6 +1,7 @@
 package com.revature.project03.model;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -35,6 +36,11 @@ public class Patient {
 	private String mobileNo;
 	private String address;
 	private String email_id;
+	private Date date;
+	
+	@OneToMany(cascade=CascadeType.ALL, mappedBy = "patient")
+	private List<Appointment>appointments =new ArrayList<>();
+
 	
 	
 	

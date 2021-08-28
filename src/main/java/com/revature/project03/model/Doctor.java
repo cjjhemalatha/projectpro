@@ -1,10 +1,15 @@
 package com.revature.project03.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
@@ -33,6 +38,9 @@ private String specialization;
 @Embedded
 private DoctorAvailability doctorAvailability;
 private String password;
+
+@OneToMany(cascade=CascadeType.ALL, mappedBy = "doctor")
+private List<Appointment>docappointments =new ArrayList<>();
 
 
 }

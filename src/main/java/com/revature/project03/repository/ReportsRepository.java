@@ -18,7 +18,7 @@ import com.revature.project03.model.Patient;
 
 public interface ReportsRepository extends JpaRepository<Patient,Integer>{
 	
-	@Query("SELECT p from Patient p where p.Name =:name ")
+	@Query("SELECT count(p) from Patient p where p.Date =:date ")
 	int findById(@Param("name") String name);
 }
 
