@@ -49,5 +49,7 @@ public class Receptionist {
 	@OneToMany(cascade= CascadeType.ALL,mappedBy="receptionist")
 	private List<Appointment>appointments=new ArrayList<>();
 	
-	
+	@OneToMany(cascade= CascadeType.ALL)
+	private List<Doctor>doctors=new ArrayList<>();
+		
 }
